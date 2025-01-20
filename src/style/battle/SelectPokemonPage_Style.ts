@@ -2,12 +2,40 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
     gap: 10px;
     background-color: whitesmoke;
+`
+// 상단 배틀 정보 컨테이너
+export const TopContainer = styled.div`
+    width: 100%;
+    height: 5%;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-bottom: 5px black solid;
+`
+// 중단 포켓몬 선택 컨테이너
+export const MiddleContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+`
+// 하단 버튼 컨테이너
+export const BottomContainer = styled.div`
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-top: 5px black solid;
 `
 // 적군 팀 컨테이너
 export const OppositeTeamContainer = styled.div`
@@ -82,7 +110,7 @@ export const PokemonSelectContainer = styled.div`
 export const PokemonSelectWrapper = styled.div`
     display: flex;
     width: 100%;
-    height: 85%;
+    height: 82%;
     overflow-y: scroll;
     border: 1px solid black;
     border-radius: 10px;
