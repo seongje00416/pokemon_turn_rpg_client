@@ -135,10 +135,57 @@ export const LeftContainerInformationDetailValue = styled.div`
     border-bottom: 1px solid lightgray;
 `
 export const LeftContentEquipmentContainer = styled.div`
-
+    width: 100%;
+    height: 100%;
+    display: ${ props => props.isCurrent ? "flex" : "none" };
 `
 export const LeftContentSkillContainer = styled.div`
-
+    width: 100%;
+    height: 100%;
+    display: ${ props => props.isCurrent ? "flex" : "none" };
+    flex-direction: column;
+    align-items: center;
+`
+export const LeftContentSkillListWrapper = styled.div`
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+`
+export const LeftContentSkillCard = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 10%;
+    border-radius: 15px;
+    background-color: white;
+    align-items: center;
+`
+export const LeftContentSkillName = styled.div`
+    width: 70%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+`
+export const LeftContentSkillType = styled.div`
+    width: 15%;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: darkred;
+`
+export const LeftContentSkillActivation = styled.div`
+    width: 15%;
+`
+export const LeftContentSkillInformationWrapper = styled.div`
+    width: 95%;
+    height: 40%;
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 15px;
 `
 
 // 우측 포켓몬 일러스트 컨테이너

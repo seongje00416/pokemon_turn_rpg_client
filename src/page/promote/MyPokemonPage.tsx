@@ -18,6 +18,13 @@ import {
     LeftContainerInformationDetailWrapper,
     LeftContainerInformationDetailName,
     LeftContainerInformationDetailValue,
+    LeftContentEquipmentContainer,
+    LeftContentSkillContainer,
+    LeftContentSkillListWrapper,
+    LeftContentSkillCard,
+    LeftContentSkillInformationWrapper,
+    LeftContentSkillName,
+    LeftContentSkillActivation, LeftContentSkillType,
 } from '@/style/promote/MyPokemonPage_Style'
 
 export const MyPokemonPage = () => {
@@ -90,9 +97,26 @@ export const MyPokemonPage = () => {
 
                             </LeftContainerInformationDetailContainer>
                         </LeftContentInformationContainer>
-                        { /* 장바 화면 */ }
+                        { /* 장비 화면 */ }
+                        <LeftContentEquipmentContainer isCurrent={false}>
 
+                        </LeftContentEquipmentContainer>
                         { /* 기술 화면 */ }
+                        <LeftContentSkillContainer isCurrent={true}>
+                            <LeftContentSkillListWrapper>
+                                <LeftContentSkillCard> s </LeftContentSkillCard>
+                                <LeftContentSkillCard> s </LeftContentSkillCard>
+                                <LeftContentSkillCard> s </LeftContentSkillCard>
+                                <LeftContentSkillCard>
+                                    <LeftContentSkillName> 불꽃펀치 </LeftContentSkillName>
+                                    <LeftContentSkillActivation> 액티브 </LeftContentSkillActivation>
+                                    <LeftContentSkillType> </LeftContentSkillType>
+                                </LeftContentSkillCard>
+                            </LeftContentSkillListWrapper>
+                            <LeftContentSkillInformationWrapper>
+
+                            </LeftContentSkillInformationWrapper>
+                        </LeftContentSkillContainer>
                     </LeftContentWrapper>
                 </LeftContainer>
                 <RightContainer>
