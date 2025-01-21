@@ -13,19 +13,33 @@ import {
     SkillCardNameText,
     ContextText,
     PokemonInfoCard,
-    MoveGageCard, MoveGageLine
+    MoveGageCard,
+    MoveGageLine,
+    LeftTeamContainer,
+    RightTeamContainer,
+    TeamPokemonCard,
+    TeamPokemonInfoWrapper,
+    TeamPokemonImage,
+    TeamPokemonInfoStatusWrapper,
+    TeamPokemonInfoStatusLabel,
+    TeamPokemonInfoName,
+    TeamPokemonInfoHPGage,
+    TeamPokemonInfoHP
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 
 export const BattleFieldPage = () => {
     return (
         <MainContainer>
+            { /* 최상단 등급 컨테이너 */ }
             <BattleFieldGradeContainer>
 
             </BattleFieldGradeContainer>
+            { /* 배틀 정보 컨테이너 */ }
             <BattleInfoContainer>
-
+                
             </BattleInfoContainer>
+            { /* 행동 게이지 컨테이너 */ }
             <MoveGageContainer>
                 <MoveGageLine>
                     <MoveGageCard className="pokesprite pokemon infernape" moveGage={0} isOpposite={true} />
@@ -38,9 +52,71 @@ export const BattleFieldPage = () => {
                     <MoveGageCard className="pokesprite pokemon arceus" moveGage={90} isOpposite={false} />
                 </MoveGageLine>
             </MoveGageContainer>
+            { /* 중단 참여 포켓몬 컨테이너 */ }
             <MiddleContainer>
+                <LeftTeamContainer>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel>
 
+                                </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 초염몽 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage />
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/초염몽_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel>
+
+                                </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 엠페르트 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage />
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/엠페르트_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel>
+
+                                </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 메가니움 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage />
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/메가니움_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel>
+
+                                </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 푸크린 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage />
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/푸크린_앞.gif' />
+                    </TeamPokemonCard>
+                </LeftTeamContainer>
+                <RightTeamContainer>
+
+                </RightTeamContainer>
             </MiddleContainer>
+            { /* 스킬 및 포켓몬 정보 컨테이너 */ }
             <SkillContainer>
                 <PokemonInfoWrapper>
                     <PokemonInfoCard>
@@ -62,6 +138,7 @@ export const BattleFieldPage = () => {
                     </SkillCard>
                 </SkillWrapper>
             </SkillContainer>
+            { /* 대화창 컨테이너 */ }
             <ContextContainer>
                 <ContextText>
                     효과가 굉장했다!

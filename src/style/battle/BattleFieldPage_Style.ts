@@ -56,6 +56,59 @@ export const MoveGageCard = styled.span`
 export const MiddleContainer = styled.div`
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+`
+export const LeftTeamContainer = styled.div`
+    width: 45%;
+    margin: 1%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+`
+export const RightTeamContainer = styled.div`
+    width: 45%;
+    margin: 1%;
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+`
+export const TeamPokemonCard = styled.div`
+    display: flex;
+    margin: 2%;
+    border: 1px solid gray;
+    border-radius: 10px;
+`
+export const TeamPokemonInfoWrapper = styled.div`
+    display: flex;
+    width: 55%;
+    flex-direction: column;
+`
+export const TeamPokemonInfoStatusWrapper = styled.div`
+    height: 40%;
+`
+export const TeamPokemonInfoStatusLabel = styled.p`
+    
+`
+export const TeamPokemonInfoName = styled.p`
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    height: 10%;
+    margin: 2%;
+`
+export const TeamPokemonInfoHP = styled.div`
+    height: 50%;
+    border-top: 1px solid lightgray;
+    margin: 4%;
+`
+export const TeamPokemonInfoHPGage = styled.div`
+    
+`
+export const TeamPokemonImage = styled.img`
+    margin: 2%;
 `
 
 // 하단 스킬 정보 및 선택 컨테이너
