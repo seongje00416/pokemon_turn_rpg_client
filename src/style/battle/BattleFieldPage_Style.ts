@@ -89,7 +89,7 @@ export const TeamPokemonInfoWrapper = styled.div`
 export const TeamPokemonInfoStatusWrapper = styled.div`
     height: 50%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1%;
     justify-content: center;
     align-items: end;
@@ -99,11 +99,15 @@ export const TeamPokemonInfoStatusWrapper = styled.div`
 export const TeamPokemonInfoStatusLabel = styled.p`
     font-size: 14px;
     font-weight: bold;
-    border: 1px solid black;
+    border-style: solid;
+    border-width: 1px;
     border-radius: 5px;
+    border-color: ${props => props.isPositive ? 'blue' : 'red' };
+    background-color: ${ props => props.isDeleteable ? 'none' : props.isPositive ? 'skyblue' : 'pink' };
     text-align: center;
     width: 90%;
     margin: 0;
+    
 `
 export const TeamPokemonInfoName = styled.p`
     font-weight: bold;
@@ -155,8 +159,18 @@ export const PokemonInfoWrapper = styled.div`
 `
 export const PokemonInfoCard = styled.div`
     width: 90%;
+    height: 100%;
     margin: 1%;
+    display: flex;
+    align-items: center;
 `
+export const PokemonInfoCardName = styled.p`
+    width: 40%;
+    text-align: center;
+    
+`
+
+
 //      포켓몬 스킬 목록
 export const SkillWrapper = styled.div`
     display: flex;

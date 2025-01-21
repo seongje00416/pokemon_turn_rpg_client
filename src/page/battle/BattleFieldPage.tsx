@@ -24,7 +24,7 @@ import {
     TeamPokemonInfoStatusLabel,
     TeamPokemonInfoName,
     TeamPokemonInfoHPGage,
-    TeamPokemonInfoHP, TeamPokemonInfoHPText
+    TeamPokemonInfoHP, TeamPokemonInfoHPText, PokemonInfoCardName
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 
@@ -71,13 +71,11 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel> 얼음 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={true}> 특수방어 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [2] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 [3] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 [1] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 엠페르트 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
@@ -90,9 +88,9 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel> 얼음 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 얼음 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={false}> 물리공격 [2] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 메가니움 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
@@ -124,7 +122,7 @@ export const BattleFieldPage = () => {
             <SkillContainer>
                 <PokemonInfoWrapper>
                     <PokemonInfoCard>
-                        초염몽
+                        <PokemonInfoCardName> 초염몽 </PokemonInfoCardName>
                     </PokemonInfoCard>
                 </PokemonInfoWrapper>
                 <SkillWrapper>
