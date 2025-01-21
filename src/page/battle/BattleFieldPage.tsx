@@ -24,7 +24,7 @@ import {
     TeamPokemonInfoStatusLabel,
     TeamPokemonInfoName,
     TeamPokemonInfoHPGage,
-    TeamPokemonInfoHP
+    TeamPokemonInfoHP, TeamPokemonInfoHPText
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 
@@ -58,13 +58,12 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel>
 
-                                </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 초염몽 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage />
+                                <TeamPokemonInfoHPGage restHP={40} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
                         <TeamPokemonImage src='src/assets/pokemon/초염몽_앞.gif' />
@@ -72,13 +71,18 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel>
-
-                                </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 얼음 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 엠페르트 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage />
+                                <TeamPokemonInfoHPGage restHP={12} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
                         <TeamPokemonImage src='src/assets/pokemon/엠페르트_앞.gif' />
@@ -86,13 +90,14 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel>
-
-                                </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 얼음 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel> 화상 </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 메가니움 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage />
+                                <TeamPokemonInfoHPGage restHP={95} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
                         <TeamPokemonImage src='src/assets/pokemon/메가니움_앞.gif' />
@@ -100,13 +105,12 @@ export const BattleFieldPage = () => {
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
-                                <TeamPokemonInfoStatusLabel>
 
-                                </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 푸크린 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage />
+                                <TeamPokemonInfoHPGage restHP={50} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
                         <TeamPokemonImage src='src/assets/pokemon/푸크린_앞.gif' />

@@ -87,10 +87,23 @@ export const TeamPokemonInfoWrapper = styled.div`
     flex-direction: column;
 `
 export const TeamPokemonInfoStatusWrapper = styled.div`
-    height: 40%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    justify-content: center;
+    align-items: end;
+    margin-inline: 2%;
+    
 `
 export const TeamPokemonInfoStatusLabel = styled.p`
-    
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+    margin: 0;
 `
 export const TeamPokemonInfoName = styled.p`
     font-weight: bold;
@@ -100,12 +113,26 @@ export const TeamPokemonInfoName = styled.p`
     margin: 2%;
 `
 export const TeamPokemonInfoHP = styled.div`
-    height: 50%;
+    height: 40%;
     border-top: 1px solid lightgray;
     margin: 4%;
+    align-items: center;
+    justify-content: center;
 `
 export const TeamPokemonInfoHPGage = styled.div`
-    
+    width: 95%;
+    height: 25%;
+    margin-top: 5%;
+    border-radius: 5px;
+    background: ${props => `linear-gradient(to right, forestgreen ${props.restHP}%, lightgray ${props.restHP}%)`};
+    padding-inline: 1%;
+    display: flex;
+    position: relative;
+`
+export const TeamPokemonInfoHPText = styled.p`
+    text-align: right;
+    margin-top: 1%;
+    color: dimgray;
 `
 export const TeamPokemonImage = styled.img`
     margin: 2%;
