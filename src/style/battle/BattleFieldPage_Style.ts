@@ -162,12 +162,15 @@ export const PokemonInfoCard = styled.div`
     height: 100%;
     margin: 1%;
     display: flex;
+    justify-content: center;
     align-items: center;
 `
 export const PokemonInfoCardName = styled.p`
     width: 40%;
     text-align: center;
-    
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
 `
 
 

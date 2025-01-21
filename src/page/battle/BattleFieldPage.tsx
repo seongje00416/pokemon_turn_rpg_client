@@ -122,7 +122,7 @@ export const BattleFieldPage = () => {
             <SkillContainer>
                 <PokemonInfoWrapper>
                     <PokemonInfoCard>
-                        <PokemonInfoCardName> 초염몽 </PokemonInfoCardName>
+                        <PokemonInfoCardName> 어떤 기술을 사용할까? </PokemonInfoCardName>
                     </PokemonInfoCard>
                 </PokemonInfoWrapper>
                 <SkillWrapper>
