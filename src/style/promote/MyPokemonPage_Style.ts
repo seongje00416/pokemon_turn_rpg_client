@@ -60,7 +60,7 @@ export const LeftContentInformationContainer = styled.div`
     width: 100%;
     height: 95%;
     background: linear-gradient( 90deg, lightgray 5%, white 5% );
-    display: flex;
+    display: ${ props => props.isCurrent ? "flex" : "none" };
     flex-direction: column;
 `
 export const LeftContainerInformationStatContainer = styled.div`

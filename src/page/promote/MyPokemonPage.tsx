@@ -31,7 +31,8 @@ export const MyPokemonPage = () => {
                         <LeftCategoryItem> 기술 </LeftCategoryItem>
                     </LeftCategoryWrapper>
                     <LeftContentWrapper>
-                        <LeftContentInformationContainer>
+                        { /* 정보 화면 */ }
+                        <LeftContentInformationContainer isCurrent={false}>
                             <LeftContainerInformationStatContainer>
                                 <InformationStatWrapper>
                                     <InformationStatName> HP </InformationStatName>
@@ -89,6 +90,9 @@ export const MyPokemonPage = () => {
 
                             </LeftContainerInformationDetailContainer>
                         </LeftContentInformationContainer>
+                        { /* 장바 화면 */ }
+
+                        { /* 기술 화면 */ }
                     </LeftContentWrapper>
                 </LeftContainer>
                 <RightContainer>
