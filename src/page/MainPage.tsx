@@ -22,7 +22,13 @@ import {
 } from "@/style/MainPage_Style"
 import '@/style/sprite/pokesprite-inventory.css'
 
+import { useNavigate } from 'react-router-dom'
+
 export const MainPage = () => {
+    const navigate = useNavigate()
+
+    const movePage = ( link:string ) => { navigate(link); }
+
     return (
         <MainContainer>
             <TopContainer>
@@ -77,19 +83,19 @@ export const MainPage = () => {
 
             </MiddleContainer>
             <BottomContainer>
-                <BottomButton>
+                <BottomButton onClick={ () => movePage("/")}>
                     <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_shop.jpg"/>
                     </BottomButtonIcon>
                     <BottomButtonName> 상점 </BottomButtonName>
                 </BottomButton>
-                <BottomButton>
+                <BottomButton onClick={ () => movePage("/myPokemon")}>
                     <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_pokemon.png"/>
                     </BottomButtonIcon>
                     <BottomButtonName> 포켓몬 </BottomButtonName>
                 </BottomButton>
-                <BottomButton>
+                <BottomButton onClick={ () => movePage("/selectPokemon")}>
                     <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_battle.png"/>
                     </BottomButtonIcon>
