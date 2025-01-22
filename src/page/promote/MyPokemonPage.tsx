@@ -52,19 +52,38 @@ import {
 } from '@/style/promote/MyPokemonPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
 
+import { useState } from 'react'
+
 export const MyPokemonPage = () => {
+
+    const [ informationDisplay, setInformationDisplay ] = useState( true )
+    const [ equipmentDisplay, setEquipmentDisplay ] = useState(false)
+    const [ skillDisplay, setSkillDisplay ] = useState(false)
+
+    const changeInformationDisplay = ( category: string ) => {
+        setInformationDisplay( false );
+        setEquipmentDisplay( false );
+        setSkillDisplay( false );
+
+        if( category === 'information' ) setInformationDisplay( true );
+        else if( category === 'equipment' ) setEquipmentDisplay( true );
+        else if( category === 'skill' ) setSkillDisplay( true );
+        else console.log( "WRONG INPUT" )
+
+    }
+
     return (
         <MainContainer>
             <ContentContainer>
                 <LeftContainer>
                     <LeftCategoryWrapper>
-                        <LeftCategoryItem> 정보 </LeftCategoryItem>
-                        <LeftCategoryItem> 장비 </LeftCategoryItem>
-                        <LeftCategoryItem> 기술 </LeftCategoryItem>
+                        <LeftCategoryItem onClick={ () => changeInformationDisplay('information') }> 정보 </LeftCategoryItem>
+                        <LeftCategoryItem onClick={ () => changeInformationDisplay('equipment') }> 장비 </LeftCategoryItem>
+                        <LeftCategoryItem onClick={ () => changeInformationDisplay('skill') }> 기술 </LeftCategoryItem>
                     </LeftCategoryWrapper>
                     <LeftContentWrapper>
                         { /* 정보 화면 */ }
-                        <LeftContentInformationContainer isCurrent={false}>
+                        <LeftContentInformationContainer isCurrent={informationDisplay}>
                             <LeftContainerInformationStatContainer>
                                 <InformationStatWrapper>
                                     <InformationStatName> HP </InformationStatName>
@@ -123,7 +142,7 @@ export const MyPokemonPage = () => {
                             </LeftContainerInformationDetailContainer>
                         </LeftContentInformationContainer>
                         { /* 장비 화면 */ }
-                        <LeftContentEquipmentContainer isCurrent={true}>
+                        <LeftContentEquipmentContainer isCurrent={equipmentDisplay}>
                             <LeftContainerEquipmentLeftWrapper>
                                 <LeftContainerEquipmentNormalItemCard>
 
@@ -192,7 +211,7 @@ export const MyPokemonPage = () => {
                             </LeftContainerEquipmentRightWrapper>
                         </LeftContentEquipmentContainer>
                         { /* 기술 화면 */ }
-                        <LeftContentSkillContainer isCurrent={false}>
+                        <LeftContentSkillContainer isCurrent={skillDisplay}>
                             <LeftContentSkillListWrapper>
                                 <LeftContentSkillCard>
                                     <LeftContentSkillName> 불꽃펀치 </LeftContentSkillName>
