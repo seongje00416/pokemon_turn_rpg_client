@@ -333,6 +333,7 @@ export const LeftContentSkillCard = styled.div`
     border-radius: 15px;
     background-color: white;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 `
 export const LeftContentSkillName = styled.div`
     width: 70%;
@@ -370,6 +371,7 @@ export const LeftContentSkillInformationWrapper = styled.div`
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 `
 export const LeftContainerSkillInformationName = styled.p`
     font-size: 1.2rem;
@@ -397,4 +399,32 @@ export const LeftContainerSkillInformationTypeHighlight = styled.span`
 export const RightContainer = styled.div`
     width: 55%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+`
+export const RightPokemonNameWrapper = styled.div`
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background: linear-gradient(-70deg, black 85%, rgba( 0, 0, 0, 0 ) 90%);
+    gap: 5%;
+`
+export const RightPokemonName = styled.p`
+    width: 55%;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+`
+export const RightPokemonImage = styled.div`
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const RightPokemonImageIcon = styled.img`
+    width: 50%;
 `

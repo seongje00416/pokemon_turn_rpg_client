@@ -48,7 +48,9 @@ import {
     LeftContainerEquipmentRightItemListCard,
     LeftContainerEquipmentRightItemIcon,
     LeftContainerEquipmentRightItemName,
-    LeftContainerEquipmentRightItemImage, LeftContainerEquipmentRightSpecialItemInformationWrapper,
+    LeftContainerEquipmentRightItemImage,
+    LeftContainerEquipmentRightSpecialItemInformationWrapper,
+    RightPokemonNameWrapper, RightPokemonImage, RightPokemonImageIcon, RightPokemonName,
 } from '@/style/promote/MyPokemonPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
 
@@ -241,7 +243,12 @@ export const MyPokemonPage = () => {
                     </LeftContentWrapper>
                 </LeftContainer>
                 <RightContainer>
-
+                    <RightPokemonNameWrapper>
+                        <RightPokemonName> 초염몽 </RightPokemonName>
+                    </RightPokemonNameWrapper>
+                    <RightPokemonImage>
+                        <RightPokemonImageIcon src="src/assets/pokemon/초염몽_앞.gif" />
+                    </RightPokemonImage>
                 </RightContainer>
             </ContentContainer>
             <ButtonContainer>
