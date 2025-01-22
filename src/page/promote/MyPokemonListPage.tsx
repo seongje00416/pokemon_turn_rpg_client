@@ -12,7 +12,16 @@ import {
 } from '@/style/promote/MyPokemonListPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 
+import { useNavigate } from 'react-router-dom'
+
 export const MyPokemonListPage = () => {
+
+    const navigate = useNavigate();
+
+    const movePokemonDetailPage = () => {
+        navigate( '/myPokemon' )
+    }
+
     return (
         <MainContainer>
             <TopContainer>
@@ -27,7 +36,7 @@ export const MyPokemonListPage = () => {
                     <LeftPokemonImage src="src/assets/pokemon/초염몽_앞.gif" />
                 </LeftContainer>
                 <RightContainer>
-                    <RightPokemonCard>
+                    <RightPokemonCard onClick={ () => movePokemonDetailPage() }>
                         <RightPokemonCardIcon src="/src/assets/pokemon/초염몽_앞.gif" />
                         <RightPokemonCardLevel> Lv. 60 </RightPokemonCardLevel>
                         <RightPokemonCardName> 초염몽 </RightPokemonCardName>

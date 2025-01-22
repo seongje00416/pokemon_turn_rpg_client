@@ -89,7 +89,7 @@ export const MainPage = () => {
                     </BottomButtonIcon>
                     <BottomButtonName> 상점 </BottomButtonName>
                 </BottomButton>
-                <BottomButton onClick={ () => movePage("/myPokemon")}>
+                <BottomButton onClick={ () => movePage("/myPokemonList")}>
                     <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_pokemon.png"/>
                     </BottomButtonIcon>
