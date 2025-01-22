@@ -50,13 +50,16 @@ import {
     LeftContainerEquipmentRightItemName,
     LeftContainerEquipmentRightItemImage,
     LeftContainerEquipmentRightSpecialItemInformationWrapper,
-    RightPokemonNameWrapper, RightPokemonImage, RightPokemonImageIcon, RightPokemonName,
+    RightPokemonNameWrapper, RightPokemonImage, RightPokemonImageIcon, RightPokemonName, BackButton,
 } from '@/style/promote/MyPokemonPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
 
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 export const MyPokemonPage = () => {
+
+    const navigate = useNavigate();
 
     const [ informationDisplay, setInformationDisplay ] = useState( true )
     const [ equipmentDisplay, setEquipmentDisplay ] = useState(false)
@@ -71,7 +74,6 @@ export const MyPokemonPage = () => {
         else if( category === 'equipment' ) setEquipmentDisplay( true );
         else if( category === 'skill' ) setSkillDisplay( true );
         else console.log( "WRONG INPUT" )
-
     }
 
     return (
@@ -252,7 +254,7 @@ export const MyPokemonPage = () => {
                 </RightContainer>
             </ContentContainer>
             <ButtonContainer>
-
+                <BackButton onClick={ () => navigate( '/myPokemonList' )}> 뒤로 </BackButton>
             </ButtonContainer>
         </MainContainer>
     )

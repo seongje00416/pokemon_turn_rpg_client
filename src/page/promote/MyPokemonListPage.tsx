@@ -1,4 +1,5 @@
 import {
+    BackButton,
     BottomContainer,
     LeftContainer,
     LeftPokemonImage,
@@ -80,7 +81,7 @@ export const MyPokemonListPage = () => {
                 </RightContainer>
             </MiddleContainer>
             <BottomContainer>
-                dd
+                <BackButton onClick={ () => navigate( '/' ) }> 뒤로 </BackButton>
             </BottomContainer>
         </MainContainer>
     )

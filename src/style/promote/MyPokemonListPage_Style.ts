@@ -108,4 +108,24 @@ export const BottomContainer = styled.div`
     width: 100%;
     height: 8%;
     background: whitesmoke;
+    display: flex;
+    align-items: center;
+`
+export const BackButton = styled.div`
+    width: 10%;
+    height: 50%;
+    margin-inline: 2%;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+        background-color: lightgray;
+    }    
 `

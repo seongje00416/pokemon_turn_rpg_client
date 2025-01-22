@@ -28,6 +28,8 @@ export const ButtonContainer = styled.div`
     height: 10%;
     width: 100%;
     background-color: whitesmoke;
+    display: flex;
+    align-items: center;
 `
 // 좌측 상세 정보 컨테이너
 export const LeftContainer = styled.div`
@@ -427,4 +429,23 @@ export const RightPokemonImage = styled.div`
 `
 export const RightPokemonImageIcon = styled.img`
     width: 50%;
+`
+
+export const BackButton = styled.div`
+    width: 10%;
+    height: 50%;
+    margin-inline: 2%;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+        background-color: lightgray;
+    }
 `
