@@ -85,13 +85,19 @@ export const MainPage = () => {
             <BottomContainer>
                 <BottomButton onClick={ () => movePage("/")}>
                     <BottomButtonIcon>
+                        <BottomButtonImage src="src/assets/icon/main_pokemon.png"/>
+                    </BottomButtonIcon>
+                    <BottomButtonName> 포획 </BottomButtonName>
+                </BottomButton>
+                <BottomButton onClick={ () => movePage("/")}>
+                    <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_shop.jpg"/>
                     </BottomButtonIcon>
                     <BottomButtonName> 상점 </BottomButtonName>
                 </BottomButton>
                 <BottomButton onClick={ () => movePage("/myPokemonList")}>
                     <BottomButtonIcon>
-                        <BottomButtonImage src="src/assets/icon/main_pokemon.png"/>
+                        <BottomButtonImage src="src/assets/icon/main_bag.jpg"/>
                     </BottomButtonIcon>
                     <BottomButtonName> 포켓몬 </BottomButtonName>
                 </BottomButton>
