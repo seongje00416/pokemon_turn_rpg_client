@@ -134,11 +134,117 @@ export const LeftContainerInformationDetailValue = styled.div`
     align-items: center;
     border-bottom: 1px solid lightgray;
 `
+//      장비 컨테이너
 export const LeftContentEquipmentContainer = styled.div`
     width: 100%;
     height: 100%;
     display: ${ props => props.isCurrent ? "flex" : "none" };
+    justify-content: center;
+    align-items: center;
 `
+export const LeftContainerEquipmentLeftWrapper = styled.div`
+    width: 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+`
+export const LeftContainerEquipmentNormalItemCard = styled.div`
+    width: 80%;
+    height: 10%;
+    border: 2px solid black;
+    border-radius: 5px;
+`
+export const LeftContainerEquipmentSpecialItemCard = styled.div`
+    width: 80%;
+    height: 10%;
+    border: 2px solid gray;
+    border-radius: 5px;
+`
+export const LeftContainerEquipmentHoldItemCard = styled.div`
+    width: 80%;
+    height: 10%;
+    border: 2px solid lightgray;
+    margin-top: 50%;
+    border-radius: 5px;
+`
+export const LeftContainerEquipmentRightWrapper = styled.div`
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const LeftContainerEquipmentRightItemListWrapper = styled.div`
+    
+`
+export const LeftContainerEquipmentRightItemInformationCard = styled.div`
+    width: 90%;
+    height: 50%;
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+export const LeftContainerEquipmentRightItemInformationName = styled.p`
+    margin: 3%;
+    height: 10%;
+    font-weight: bold;
+    font-size: 1.2rem;
+`
+export const LeftContainerEquipmentRightItemInformationDescriptionWrapper = styled.div`
+    display: flex;
+    margin: 3%;
+    height: 5%;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+export const LeftContainerEquipmentRightItemInformationDescriptionOption = styled.p`
+    margin: 0;
+`
+export const LeftContainerEquipmentRightItemInformationDescriptionValue = styled.p`
+    margin: 0;
+`
+export const LeftContainerEquipmentRightItemInformationDescriptionText = styled.p`
+    height: 45%;
+    width: 90%;
+    border-top: 2px solid lightgray;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+`
+export const LeftContainerEquipmentRightItemInformationButtonWrapper = styled.p`
+    margin: 3%;
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+`
+export const LeftContainerEquipmentRightItemInformationButton = styled.div`
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-inline: 3%;
+    padding-block: 1%;
+    font-weight: bold;
+    
+    &:hover {
+        cursor: pointer;
+        opacity: 70%;
+    }
+`
+
 export const LeftContentSkillContainer = styled.div`
     width: 100%;
     height: 100%;

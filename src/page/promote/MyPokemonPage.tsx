@@ -29,7 +29,21 @@ import {
     LeftContainerSkillInformationName,
     LeftContainerSkillInformationDescription,
     LeftContainerSkillInformationTypeHighlight,
-    LeftContainerSkillInformationHighlightText, LeftContainerSkillInformationSpecialStatus,
+    LeftContainerSkillInformationHighlightText,
+    LeftContainerSkillInformationSpecialStatus,
+    LeftContainerEquipmentLeftWrapper,
+    LeftContainerEquipmentRightWrapper,
+    LeftContainerEquipmentNormalItemCard,
+    LeftContainerEquipmentSpecialItemCard,
+    LeftContainerEquipmentHoldItemCard,
+    LeftContainerEquipmentRightItemInformationCard,
+    LeftContainerEquipmentRightItemInformationName,
+    LeftContainerEquipmentRightItemInformationDescriptionWrapper,
+    LeftContainerEquipmentRightItemInformationDescriptionOption,
+    LeftContainerEquipmentRightItemInformationDescriptionValue,
+    LeftContainerEquipmentRightItemInformationDescriptionText,
+    LeftContainerEquipmentRightItemInformationButtonWrapper,
+    LeftContainerEquipmentRightItemInformationButton,
 } from '@/style/promote/MyPokemonPage_Style'
 
 export const MyPokemonPage = () => {
@@ -103,11 +117,49 @@ export const MyPokemonPage = () => {
                             </LeftContainerInformationDetailContainer>
                         </LeftContentInformationContainer>
                         { /* 장비 화면 */ }
-                        <LeftContentEquipmentContainer isCurrent={false}>
+                        <LeftContentEquipmentContainer isCurrent={true}>
+                            <LeftContainerEquipmentLeftWrapper>
+                                <LeftContainerEquipmentNormalItemCard>
 
+                                </LeftContainerEquipmentNormalItemCard>
+                                <LeftContainerEquipmentNormalItemCard>
+
+                                </LeftContainerEquipmentNormalItemCard>
+                                <LeftContainerEquipmentNormalItemCard>
+
+                                </LeftContainerEquipmentNormalItemCard>
+                                <LeftContainerEquipmentNormalItemCard>
+
+                                </LeftContainerEquipmentNormalItemCard>
+                                <LeftContainerEquipmentNormalItemCard>
+
+                                </LeftContainerEquipmentNormalItemCard>
+                                <LeftContainerEquipmentSpecialItemCard>
+
+                                </LeftContainerEquipmentSpecialItemCard>
+                                <LeftContainerEquipmentHoldItemCard>
+
+                                </LeftContainerEquipmentHoldItemCard>
+                            </LeftContainerEquipmentLeftWrapper>
+                            <LeftContainerEquipmentRightWrapper>
+                                <LeftContainerEquipmentRightItemInformationCard>
+                                    <LeftContainerEquipmentRightItemInformationName> 파워앵클릿 </LeftContainerEquipmentRightItemInformationName>
+                                    <LeftContainerEquipmentRightItemInformationDescriptionWrapper>
+                                        <LeftContainerEquipmentRightItemInformationDescriptionOption> 특수 공격력 </LeftContainerEquipmentRightItemInformationDescriptionOption>
+                                        <LeftContainerEquipmentRightItemInformationDescriptionValue> 30 </LeftContainerEquipmentRightItemInformationDescriptionValue>
+                                    </LeftContainerEquipmentRightItemInformationDescriptionWrapper>
+                                    <LeftContainerEquipmentRightItemInformationDescriptionText>
+                                        착용자의 특수 공격력을 상승시키는 아이템.
+                                    </LeftContainerEquipmentRightItemInformationDescriptionText>
+                                    <LeftContainerEquipmentRightItemInformationButtonWrapper>
+                                        <LeftContainerEquipmentRightItemInformationButton> 해제 </LeftContainerEquipmentRightItemInformationButton>
+                                        <LeftContainerEquipmentRightItemInformationButton> 변경 </LeftContainerEquipmentRightItemInformationButton>
+                                    </LeftContainerEquipmentRightItemInformationButtonWrapper>
+                                </LeftContainerEquipmentRightItemInformationCard>
+                            </LeftContainerEquipmentRightWrapper>
                         </LeftContentEquipmentContainer>
                         { /* 기술 화면 */ }
-                        <LeftContentSkillContainer isCurrent={true}>
+                        <LeftContentSkillContainer isCurrent={false}>
                             <LeftContentSkillListWrapper>
                                 <LeftContentSkillCard>
                                     <LeftContentSkillName> 불꽃펀치 </LeftContentSkillName>
