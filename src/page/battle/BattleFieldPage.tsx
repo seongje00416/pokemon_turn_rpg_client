@@ -28,7 +28,8 @@ import {
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 
-export const BattleFieldPage = () => {
+
+export const BattleFieldPage = ( ) => {
     return (
         <MainContainer>
             { /* 최상단 등급 컨테이너 */ }
@@ -73,9 +74,9 @@ export const BattleFieldPage = () => {
                             <TeamPokemonInfoStatusWrapper>
                                 <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={true}> 특수방어 [1] </TeamPokemonInfoStatusLabel>
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [2] </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 [3] </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 [1] </TeamPokemonInfoStatusLabel>
-                                <TeamPokemonInfoStatusLabel> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [3] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
                             <TeamPokemonInfoName> 엠페르트 </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
@@ -126,15 +127,15 @@ export const BattleFieldPage = () => {
                     </PokemonInfoCard>
                 </PokemonInfoWrapper>
                 <SkillWrapper>
-                    <SkillCard pokemonType='fire' isActive='true'>
+                    <SkillCard pokemonType='fire' isActive={true}>
                         <SkillCardNameText> 불꽃펀치 </SkillCardNameText>
                         <SkillCardTypeText> 물리 </SkillCardTypeText>
                     </SkillCard>
-                    <SkillCard pokemonType='water'>
+                    <SkillCard pokemonType={"water"} isActive={false}>
                         <SkillCardNameText> 물의 맹세 </SkillCardNameText>
                         <SkillCardTypeText> 특성 </SkillCardTypeText>
                     </SkillCard>
-                    <SkillCard pokemonType='grass' isActive='true'>
+                    <SkillCard pokemonType='grass' isActive={true}>
                         <SkillCardNameText> 하드플랜트 </SkillCardNameText>
                         <SkillCardTypeText> 특수 </SkillCardTypeText>
                     </SkillCard>

@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+interface CurrentProps {
+    isCurrent?: boolean;
+}
+interface SelectedProps {
+    isSelected?: boolean;
+}
+interface PokemonTypeProps {
+    pokemonType: string;
+}
+
+
+
 export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -56,7 +68,7 @@ export const LeftContentWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `
-export const LeftContentInformationContainer = styled.div`
+export const LeftContentInformationContainer = styled.div<CurrentProps>`
     width: 100%;
     height: 95%;
     background: linear-gradient( 90deg, lightgray 5%, white 5% );
@@ -135,7 +147,7 @@ export const LeftContainerInformationDetailValue = styled.div`
     border-bottom: 1px solid lightgray;
 `
 //      장비 컨테이너
-export const LeftContentEquipmentContainer = styled.div`
+export const LeftContentEquipmentContainer = styled.div<CurrentProps>`
     width: 100%;
     height: 100%;
     display: ${ props => props.isCurrent ? "flex" : "none" };
@@ -191,7 +203,7 @@ export const LeftContainerEquipmentRightItemListWrapper = styled.div`
     gap: 1%;
     overflow-y: auto;
 `
-export const LeftContainerEquipmentRightItemListCard = styled.div`
+export const LeftContainerEquipmentRightItemListCard = styled.div<SelectedProps>`
     width: 90%;
     height: auto;
     display: flex;
@@ -231,7 +243,7 @@ export const LeftContainerEquipmentRightItemInformationCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 `
 export const LeftContainerEquipmentRightItemInformationName = styled.p`
     margin: 3%;
@@ -239,7 +251,7 @@ export const LeftContainerEquipmentRightItemInformationName = styled.p`
     font-weight: bold;
     font-size: 1.2rem;
 `
-export const LeftContainerEquipmentRightItemInformationDescriptionWrapper = styled.div`
+export const LeftContainerEquipmentRightItemInformationDescriptionWrapper = styled.div<CurrentProps>`
     display: ${ props => props.isCurrent ? "flex" : "none" };
     margin: 3%;
     height: 5%;
@@ -264,7 +276,7 @@ export const LeftContainerEquipmentRightItemInformationDescriptionText = styled.
     margin: 1%;
     padding: 1%;
 `
-export const LeftContainerEquipmentRightSpecialItemInformationWrapper = styled.div`
+export const LeftContainerEquipmentRightSpecialItemInformationWrapper = styled.div<CurrentProps>`
     display: ${ props => props.isCurrent ? "flex" : "none" };
     margin: 3%;
     height: 5%;
@@ -297,7 +309,7 @@ export const LeftContainerEquipmentRightItemInformationButton = styled.div`
     }
 `
 
-export const LeftContentSkillContainer = styled.div`
+export const LeftContentSkillContainer = styled.div<CurrentProps>`
     width: 100%;
     height: 100%;
     display: ${ props => props.isCurrent ? "flex" : "none" };
@@ -328,7 +340,7 @@ export const LeftContentSkillName = styled.div`
     font-weight: bold;
     font-size: 18px;
 `
-export const LeftContentSkillType = styled.div`
+export const LeftContentSkillType = styled.div<PokemonTypeProps>`
     width: 15%;
     height: 100%;
     border-top-right-radius: 15px;

@@ -43,7 +43,7 @@ export const MoveGageLine = styled.div`
     display: flex;
     position: relative;
 `
-export const MoveGageCard = styled.span`
+export const MoveGageCard = styled.span<MoveGageProps>`
     transform: translateY(-42%);
     position: absolute;
     border-bottom-width: 2px;
@@ -51,6 +51,10 @@ export const MoveGageCard = styled.span`
     border-color: ${props => props.isOpposite ? 'red' : 'blue' };
     left: ${props => props.moveGage}%
 `
+interface MoveGageProps {
+    isOpposite: boolean;
+    moveGage: number;
+}
 
 // 중단 포켓몬 표시 컨테이너
 export const MiddleContainer = styled.div`
@@ -96,7 +100,7 @@ export const TeamPokemonInfoStatusWrapper = styled.div`
     margin-inline: 2%;
     
 `
-export const TeamPokemonInfoStatusLabel = styled.p`
+export const TeamPokemonInfoStatusLabel = styled.p<TeamPokemonInfoStatusLabelProps>`
     font-size: 14px;
     font-weight: bold;
     border-style: solid;
@@ -107,8 +111,11 @@ export const TeamPokemonInfoStatusLabel = styled.p`
     text-align: center;
     width: 90%;
     margin: 0;
-    
 `
+interface TeamPokemonInfoStatusLabelProps {
+    isPositive: boolean;
+    isDeleteable: boolean;
+}
 export const TeamPokemonInfoName = styled.p`
     font-weight: bold;
     font-size: 18px;
@@ -123,7 +130,7 @@ export const TeamPokemonInfoHP = styled.div`
     align-items: center;
     justify-content: center;
 `
-export const TeamPokemonInfoHPGage = styled.div`
+export const TeamPokemonInfoHPGage = styled.div<TeamPokemonInfoHPGageProps>`
     width: 95%;
     height: 25%;
     margin-top: 5%;
@@ -133,6 +140,9 @@ export const TeamPokemonInfoHPGage = styled.div`
     display: flex;
     position: relative;
 `
+interface TeamPokemonInfoHPGageProps {
+    restHP: number;
+}
 export const TeamPokemonInfoHPText = styled.p`
     text-align: right;
     margin-top: 1%;
@@ -183,7 +193,7 @@ export const SkillWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `
-export const SkillCard = styled.div`
+export const SkillCard = styled.div<SkillCardProps>`
     margin-block: 1%;
     width: 30%;
     height: 60%;
@@ -213,6 +223,10 @@ export const SkillCard = styled.div`
         background-color: lightgray;
     }
 `
+interface SkillCardProps {
+    isActive: boolean;
+    pokemonType: string;
+}
 export const SkillCardNameText = styled.p`
     font-weight: bold;
     font-size: 1.2rem;
