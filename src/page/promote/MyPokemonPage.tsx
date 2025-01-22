@@ -24,7 +24,12 @@ import {
     LeftContentSkillCard,
     LeftContentSkillInformationWrapper,
     LeftContentSkillName,
-    LeftContentSkillActivation, LeftContentSkillType,
+    LeftContentSkillActivation,
+    LeftContentSkillType,
+    LeftContainerSkillInformationName,
+    LeftContainerSkillInformationDescription,
+    LeftContainerSkillInformationTypeHighlight,
+    LeftContainerSkillInformationHighlightText, LeftContainerSkillInformationSpecialStatus,
 } from '@/style/promote/MyPokemonPage_Style'
 
 export const MyPokemonPage = () => {
@@ -104,17 +109,29 @@ export const MyPokemonPage = () => {
                         { /* 기술 화면 */ }
                         <LeftContentSkillContainer isCurrent={true}>
                             <LeftContentSkillListWrapper>
-                                <LeftContentSkillCard> s </LeftContentSkillCard>
-                                <LeftContentSkillCard> s </LeftContentSkillCard>
-                                <LeftContentSkillCard> s </LeftContentSkillCard>
                                 <LeftContentSkillCard>
                                     <LeftContentSkillName> 불꽃펀치 </LeftContentSkillName>
                                     <LeftContentSkillActivation> 액티브 </LeftContentSkillActivation>
-                                    <LeftContentSkillType> </LeftContentSkillType>
+                                    <LeftContentSkillType pokemonType="fire" />
+                                </LeftContentSkillCard>
+                                <LeftContentSkillCard>
+                                    <LeftContentSkillName> 냉동펀치 </LeftContentSkillName>
+                                    <LeftContentSkillActivation> 패시브 </LeftContentSkillActivation>
+                                    <LeftContentSkillType pokemonType="ice" />
+                                </LeftContentSkillCard>
+                                <LeftContentSkillCard>
+                                    <LeftContentSkillName> 번개펀치 </LeftContentSkillName>
+                                    <LeftContentSkillActivation> 액티브 </LeftContentSkillActivation>
+                                    <LeftContentSkillType pokemonType="electric" />
                                 </LeftContentSkillCard>
                             </LeftContentSkillListWrapper>
                             <LeftContentSkillInformationWrapper>
-
+                                <LeftContainerSkillInformationName> 불꽃펀치 </LeftContainerSkillInformationName>
+                                <LeftContainerSkillInformationDescription>
+                                    적에게 <LeftContainerSkillInformationTypeHighlight> 불꽃 </LeftContainerSkillInformationTypeHighlight> 타입의
+                                    <LeftContainerSkillInformationHighlightText> 물리 </LeftContainerSkillInformationHighlightText> 피해를 준다.
+                                    n% 확률로 적에게 n턴간 <LeftContainerSkillInformationSpecialStatus> 화상 </LeftContainerSkillInformationSpecialStatus> 을 부여한다.
+                                </LeftContainerSkillInformationDescription>
                             </LeftContentSkillInformationWrapper>
                         </LeftContentSkillContainer>
                     </LeftContentWrapper>

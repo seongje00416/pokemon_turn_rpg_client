@@ -175,10 +175,22 @@ export const LeftContentSkillType = styled.div`
     height: 100%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: darkred;
+    background-color: ${ props => {
+        switch( props.pokemonType ){
+            case "fire":
+                return 'darkred'
+            case "ice":
+                return 'skyblue'
+            case "electric":
+                return 'yellow'
+            default:
+                return 'lightgray'
+        }
+    }}
 `
 export const LeftContentSkillActivation = styled.div`
     width: 15%;
+    font-weight: bold;
 `
 export const LeftContentSkillInformationWrapper = styled.div`
     width: 95%;
@@ -186,7 +198,30 @@ export const LeftContentSkillInformationWrapper = styled.div`
     background-color: white;
     border: 3px solid gray;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 `
+export const LeftContainerSkillInformationName = styled.p`
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 3%;
+`
+export const LeftContainerSkillInformationDescription = styled.p`
+    font-size: 1.1rem;
+    margin-inline: 3%;
+`
+export const LeftContainerSkillInformationSpecialStatus = styled.span`
+    font-weight: bold;
+    color: red;
+`
+export const LeftContainerSkillInformationHighlightText = styled.span`
+    font-weight: bold;
+`
+export const LeftContainerSkillInformationTypeHighlight = styled.span`
+    font-weight: bold;
+    color: darkred;
+`
+
 
 // 우측 포켓몬 일러스트 컨테이너
 export const RightContainer = styled.div`
