@@ -6,10 +6,13 @@ import BattleFieldPage from "@/page/battle/BattleFieldPage.tsx";
 import MyPokemonPage from "@/page/promote/MyPokemonPage.tsx";
 import MyPokemonListPage from "@/page/promote/MyPokemonListPage.tsx";
 
+import MainPage from "@/page/MainPage.tsx";
+
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<MainPage /> } />
                 <Route path="/selectPokemon" element={<SelectPokemonPage />} />
                 <Route path="/battleField" element={<BattleFieldPage />} />
                 <Route path="/myPokemon" element={<MyPokemonPage /> } />
