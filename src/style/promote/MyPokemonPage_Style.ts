@@ -156,12 +156,14 @@ export const LeftContainerEquipmentNormalItemCard = styled.div`
     height: 10%;
     border: 2px solid black;
     border-radius: 5px;
+    background: rgba( 127, 127, 127, 0.7);
 `
 export const LeftContainerEquipmentSpecialItemCard = styled.div`
     width: 80%;
     height: 10%;
     border: 2px solid gray;
     border-radius: 5px;
+    background: rgba( 127, 127, 127, 0.7);
 `
 export const LeftContainerEquipmentHoldItemCard = styled.div`
     width: 80%;
@@ -169,6 +171,7 @@ export const LeftContainerEquipmentHoldItemCard = styled.div`
     border: 2px solid lightgray;
     margin-top: 50%;
     border-radius: 5px;
+    background: rgba( 127, 127, 127, 0.7);
 `
 export const LeftContainerEquipmentRightWrapper = styled.div`
     width: 90%;
@@ -179,7 +182,44 @@ export const LeftContainerEquipmentRightWrapper = styled.div`
     justify-content: center;
 `
 export const LeftContainerEquipmentRightItemListWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 45%;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    overflow-y: auto;
+`
+export const LeftContainerEquipmentRightItemListCard = styled.div`
+    width: 90%;
+    height: auto;
+    display: flex;
+    border-radius: 5px;
+    background-color: ${ props => props.isSelected ? "yellow" : "none" };
     
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+`
+export const LeftContainerEquipmentRightItemIcon = styled.div`
+    width: 10%;
+    display: flex;
+    justify-content: center;
+`
+export const LeftContainerEquipmentRightItemImage = styled.span`
+
+`
+export const LeftContainerEquipmentRightItemName = styled.p`
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
 `
 export const LeftContainerEquipmentRightItemInformationCard = styled.div`
     width: 90%;
@@ -191,6 +231,7 @@ export const LeftContainerEquipmentRightItemInformationCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
 `
 export const LeftContainerEquipmentRightItemInformationName = styled.p`
     margin: 3%;
@@ -199,7 +240,7 @@ export const LeftContainerEquipmentRightItemInformationName = styled.p`
     font-size: 1.2rem;
 `
 export const LeftContainerEquipmentRightItemInformationDescriptionWrapper = styled.div`
-    display: flex;
+    display: ${ props => props.isCurrent ? "flex" : "none" };
     margin: 3%;
     height: 5%;
     width: 90%;
@@ -222,6 +263,17 @@ export const LeftContainerEquipmentRightItemInformationDescriptionText = styled.
     text-align: center;
     margin: 1%;
     padding: 1%;
+`
+export const LeftContainerEquipmentRightSpecialItemInformationWrapper = styled.div`
+    display: ${ props => props.isCurrent ? "flex" : "none" };
+    margin: 3%;
+    height: 5%;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 export const LeftContainerEquipmentRightItemInformationButtonWrapper = styled.p`
     margin: 3%;

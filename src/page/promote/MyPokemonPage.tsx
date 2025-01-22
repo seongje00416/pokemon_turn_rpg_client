@@ -44,7 +44,13 @@ import {
     LeftContainerEquipmentRightItemInformationDescriptionText,
     LeftContainerEquipmentRightItemInformationButtonWrapper,
     LeftContainerEquipmentRightItemInformationButton,
+    LeftContainerEquipmentRightItemListWrapper,
+    LeftContainerEquipmentRightItemListCard,
+    LeftContainerEquipmentRightItemIcon,
+    LeftContainerEquipmentRightItemName,
+    LeftContainerEquipmentRightItemImage, LeftContainerEquipmentRightSpecialItemInformationWrapper,
 } from '@/style/promote/MyPokemonPage_Style'
+import '@/style/sprite/pokesprite-inventory.css'
 
 export const MyPokemonPage = () => {
     return (
@@ -142,12 +148,39 @@ export const MyPokemonPage = () => {
                                 </LeftContainerEquipmentHoldItemCard>
                             </LeftContainerEquipmentLeftWrapper>
                             <LeftContainerEquipmentRightWrapper>
+                                <LeftContainerEquipmentRightItemListWrapper>
+                                    <LeftContainerEquipmentRightItemListCard isSelected={true}>
+                                        <LeftContainerEquipmentRightItemIcon>
+                                            <LeftContainerEquipmentRightItemImage className="pokesprite ev-item power-anklet" />
+                                        </LeftContainerEquipmentRightItemIcon>
+                                        <LeftContainerEquipmentRightItemName> 파워 앵클릿 </LeftContainerEquipmentRightItemName>
+                                    </LeftContainerEquipmentRightItemListCard>
+                                    <LeftContainerEquipmentRightItemListCard isSelected={false}>
+                                        <LeftContainerEquipmentRightItemIcon>
+                                            <LeftContainerEquipmentRightItemImage className="pokesprite ev-item power-band" />
+                                        </LeftContainerEquipmentRightItemIcon>
+                                        <LeftContainerEquipmentRightItemName> 파워 밴드 </LeftContainerEquipmentRightItemName>
+                                    </LeftContainerEquipmentRightItemListCard>
+                                    <LeftContainerEquipmentRightItemListCard isSelected={false}>
+                                        <LeftContainerEquipmentRightItemIcon>
+                                            <LeftContainerEquipmentRightItemImage className="pokesprite ev-item power-weight" />
+                                        </LeftContainerEquipmentRightItemIcon>
+                                        <LeftContainerEquipmentRightItemName> 파워 웨이트 </LeftContainerEquipmentRightItemName>
+                                    </LeftContainerEquipmentRightItemListCard>
+                                </LeftContainerEquipmentRightItemListWrapper>
                                 <LeftContainerEquipmentRightItemInformationCard>
                                     <LeftContainerEquipmentRightItemInformationName> 파워앵클릿 </LeftContainerEquipmentRightItemInformationName>
-                                    <LeftContainerEquipmentRightItemInformationDescriptionWrapper>
+                                    <LeftContainerEquipmentRightItemInformationDescriptionWrapper isCurrent={true}>
                                         <LeftContainerEquipmentRightItemInformationDescriptionOption> 특수 공격력 </LeftContainerEquipmentRightItemInformationDescriptionOption>
                                         <LeftContainerEquipmentRightItemInformationDescriptionValue> 30 </LeftContainerEquipmentRightItemInformationDescriptionValue>
                                     </LeftContainerEquipmentRightItemInformationDescriptionWrapper>
+                                    <LeftContainerEquipmentRightItemInformationDescriptionWrapper isCurrent={true}>
+                                        <LeftContainerEquipmentRightItemInformationDescriptionOption> 속도 </LeftContainerEquipmentRightItemInformationDescriptionOption>
+                                        <LeftContainerEquipmentRightItemInformationDescriptionValue> 15 </LeftContainerEquipmentRightItemInformationDescriptionValue>
+                                    </LeftContainerEquipmentRightItemInformationDescriptionWrapper>
+                                    <LeftContainerEquipmentRightSpecialItemInformationWrapper isCurrent={false}>
+                                        초염몽이 사용하는 기술들이 데미지를 10% 상승시킨다.
+                                    </LeftContainerEquipmentRightSpecialItemInformationWrapper>
                                     <LeftContainerEquipmentRightItemInformationDescriptionText>
                                         착용자의 특수 공격력을 상승시키는 아이템.
                                     </LeftContainerEquipmentRightItemInformationDescriptionText>
