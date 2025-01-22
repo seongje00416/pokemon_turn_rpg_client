@@ -16,10 +16,15 @@ import {
     TeamEntryPokemonCardText,
     TopContainer,
     MiddleContainer,
-    BottomContainer
+    BottomContainer, Button
 } from "@/style/battle/SelectPokemonPage_Style"
 
+import { useNavigate } from 'react-router-dom'
+
 export const SelectPokemonPage = () => {
+
+    const navigate = useNavigate();
+
     return (
         <MainContainer>
             <TopContainer>
@@ -138,7 +143,8 @@ export const SelectPokemonPage = () => {
                 </PokemonSelectContainer>
             </MiddleContainer>
             <BottomContainer>
-
+                <Button onClick={ () => navigate('/') }> 뒤로 </Button>
+                <Button onClick={ () => navigate('/battleField') } > 시작 </Button>
             </BottomContainer>
         </MainContainer>
     )
