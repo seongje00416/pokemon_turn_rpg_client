@@ -7,10 +7,18 @@ import {
     MainContainer,
     MiddleContainer,
     TopContainer,
-    TopDisplayWrapper, TopMenuButtonWrapper,
+    TopDisplayWrapper,
+    TopMenuButtonWrapper,
     TopMoneyDisplayCard,
-    TopMoneyDisplayCardIcon, TopMoneyDisplayCardIconImage, TopMoneyDisplayCardValue,
-    TopProfileCard
+    TopMoneyDisplayCardIcon,
+    TopMoneyDisplayCardIconImage,
+    TopMoneyDisplayCardValue,
+    TopProfileCard,
+    TopProfileImageIcon,
+    TopProfileImagePart,
+    TopProfileInfoPart,
+    TopProfileNickName,
+    TopProfileUserLevel
 } from "@/style/MainPage_Style"
 import '@/style/sprite/pokesprite-inventory.css'
 
@@ -19,7 +27,15 @@ export const MainPage = () => {
         <MainContainer>
             <TopContainer>
                 <TopProfileCard>
-
+                    <TopProfileImagePart>
+                        <TopProfileImageIcon src="src/assets/profile/profile_jirachi.png" />
+                    </TopProfileImagePart>
+                    <TopProfileInfoPart>
+                        <TopProfileNickName> SilverCrater </TopProfileNickName>
+                        <TopProfileUserLevel>
+                            d
+                        </TopProfileUserLevel>
+                    </TopProfileInfoPart>
                 </TopProfileCard>
                 <TopDisplayWrapper>
                     <TopMoneyDisplayCard>

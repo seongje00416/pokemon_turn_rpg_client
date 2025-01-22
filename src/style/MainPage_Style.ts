@@ -14,6 +14,7 @@ export const TopContainer = styled.div`
     display: flex;
     align-items: center;
 `
+//      트레이너 미니 카드
 export const TopProfileCard = styled.div`
     width: 25%;
     height: 90%;
@@ -21,7 +22,38 @@ export const TopProfileCard = styled.div`
     border: 2px solid gray;
     border-radius: 5px;
     margin: 2%;
+    justify-content: center;
 `
+export const TopProfileImagePart = styled.div`
+    width: 35%;
+    height: auto;
+    margin: 3%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const TopProfileImageIcon = styled.img`
+    width: 100%;
+    height: auto;
+`
+export const TopProfileInfoPart = styled.div`
+    width: 60%;
+`
+export const TopProfileNickName = styled.p`
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid lightgray;
+    height: 30%;
+    margin: 1%;
+`
+export const TopProfileUserLevel = styled.div`
+    height: 60%;
+`
+//      재화 컨테이너
 export const TopDisplayWrapper = styled.div`
     width: 70%;
     height: 100%;
