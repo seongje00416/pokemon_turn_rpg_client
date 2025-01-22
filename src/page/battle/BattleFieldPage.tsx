@@ -55,6 +55,7 @@ export const BattleFieldPage = ( ) => {
             </MoveGageContainer>
             { /* 중단 참여 포켓몬 컨테이너 */ }
             <MiddleContainer>
+                { /* 아군 포켓몬 목록 */}
                 <LeftTeamContainer>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
@@ -115,15 +116,73 @@ export const BattleFieldPage = ( ) => {
                         <TeamPokemonImage src='src/assets/pokemon/푸크린_앞.gif' />
                     </TeamPokemonCard>
                 </LeftTeamContainer>
+                { /* 적군 포켓몬 목록 */}
                 <RightTeamContainer>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
 
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 괴력몬 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage restHP={40} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/괴력몬_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={true}> 특수방어 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [2] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [3] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 라이츄 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage restHP={12} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/라이츄_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 얼음 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 화상 [1] </TeamPokemonInfoStatusLabel>
+                                <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={false}> 물리공격 [2] </TeamPokemonInfoStatusLabel>
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 팬텀 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage restHP={95} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/팬텀_앞.gif' />
+                    </TeamPokemonCard>
+                    <TeamPokemonCard>
+                        <TeamPokemonInfoWrapper>
+                            <TeamPokemonInfoStatusWrapper>
+
+                            </TeamPokemonInfoStatusWrapper>
+                            <TeamPokemonInfoName> 후딘 </TeamPokemonInfoName>
+                            <TeamPokemonInfoHP>
+                                <TeamPokemonInfoHPGage restHP={50} />
+                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                            </TeamPokemonInfoHP>
+                        </TeamPokemonInfoWrapper>
+                        <TeamPokemonImage src='src/assets/pokemon/후딘_앞.gif' />
+                    </TeamPokemonCard>
                 </RightTeamContainer>
             </MiddleContainer>
             { /* 스킬 및 포켓몬 정보 컨테이너 */ }
             <SkillContainer>
                 <PokemonInfoWrapper>
                     <PokemonInfoCard>
-                        <PokemonInfoCardName> 어떤 기술을 사용할까? </PokemonInfoCardName>
+                        <PokemonInfoCardName id="guideContext"> 어떤 기술을 사용할까? </PokemonInfoCardName>
                     </PokemonInfoCard>
                 </PokemonInfoWrapper>
                 <SkillWrapper>
@@ -143,7 +202,7 @@ export const BattleFieldPage = ( ) => {
             </SkillContainer>
             { /* 대화창 컨테이너 */ }
             <ContextContainer>
-                <ContextText>
+                <ContextText id="battleContext">
                     효과가 굉장했다!
                 </ContextText>
             </ContextContainer>
