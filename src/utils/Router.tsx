@@ -6,6 +6,8 @@ import BattleFieldPage from "@/page/battle/BattleFieldPage.tsx";
 import MyPokemonPage from "@/page/promote/MyPokemonPage.tsx";
 import MyPokemonListPage from "@/page/promote/MyPokemonListPage.tsx";
 
+import PokemonGatchaPage from "@/page/promote/PokemonGatchaPage.tsx";
+
 import MainPage from "@/page/MainPage.tsx";
 
 const Router = () => {
@@ -13,6 +15,7 @@ const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainPage /> } />
+                <Route path="/gatcha" element={<PokemonGatchaPage /> } />
                 <Route path="/selectPokemon" element={<SelectPokemonPage />} />
                 <Route path="/battleField" element={<BattleFieldPage />} />
                 <Route path="/myPokemon" element={<MyPokemonPage /> } />

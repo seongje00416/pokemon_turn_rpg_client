@@ -83,7 +83,7 @@ export const MainPage = () => {
 
             </MiddleContainer>
             <BottomContainer>
-                <BottomButton onClick={ () => movePage("/")}>
+                <BottomButton onClick={ () => movePage("/gatcha")}>
                     <BottomButtonIcon>
                         <BottomButtonImage src="src/assets/icon/main_pokemon.png"/>
                     </BottomButtonIcon>
