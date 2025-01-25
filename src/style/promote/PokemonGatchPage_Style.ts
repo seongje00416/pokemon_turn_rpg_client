@@ -15,6 +15,8 @@ export const TopContainer = styled.div`
 export const MiddleContainer = styled.div`
     width: 100%;
     height: 75%;
+    background: url("src/assets/background/gatcha_background.png");
+    background-size: cover;
 `
 export const BottomContainer = styled.div`
     width: 100%;
