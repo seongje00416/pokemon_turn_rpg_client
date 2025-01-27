@@ -24,10 +24,21 @@ import {
 } from '@/style/promote/PokemonGatchPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react'
 
 export const PokemonGatchaPage = () => {
 
     const navigate = useNavigate();
+
+    const [ isModalOpen, setIsModalOpen ] = useState(false);
+    const [ isSingleGatcha, setSingleGatcha ] = useState(false);
+    const [ isMultiGatcha, setMultiGatcha ] = useState(false);
+
+    const gatchaModalController = ( isMulti: boolean ) => {
+        setSingleGatcha( !isMulti );
+        setMultiGatcha( isMulti );
+        setIsModalOpen( true );
+    }
 
     return (
         <MainContainer>
@@ -36,9 +47,9 @@ export const PokemonGatchaPage = () => {
             </TopContainer>
             <MiddleContainer>
                 { /* 뽑기시 나오는 Modal 창 */ }
-                <GatchaModalBackground isVisible={true}>
+                <GatchaModalBackground isVisible={ isModalOpen }>
                     <GatchaModalContainer>
-                        <GatchaModalItemContainer isVisible={false} >
+                        <GatchaModalItemContainer isVisible={ isMultiGatcha } >
                             <GatchaModalItemCard> ddd </GatchaModalItemCard>
                             <GatchaModalItemCard> ddd </GatchaModalItemCard>
                             <GatchaModalItemCard> ddd </GatchaModalItemCard>
@@ -50,11 +61,11 @@ export const PokemonGatchaPage = () => {
                             <GatchaModalItemCard> ddd </GatchaModalItemCard>
                             <GatchaModalItemCard> ddd </GatchaModalItemCard>
                         </GatchaModalItemContainer>
-                        <GatchaModalItemSingleContainer isVisible={true}>
+                        <GatchaModalItemSingleContainer isVisible={ isSingleGatcha }>
                             <GatchaModalItemSingleCard> kkk </GatchaModalItemSingleCard>
                         </GatchaModalItemSingleContainer>
                         <GatchaModalButtonContainer>
-                            <GatchaModalButton> 확인 </GatchaModalButton>
+                            <GatchaModalButton onClick={ () => setIsModalOpen(false) }> 확인 </GatchaModalButton>
                         </GatchaModalButtonContainer>
                     </GatchaModalContainer>
                 </GatchaModalBackground>
@@ -69,11 +80,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         상시 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(false) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball poke' />
                                         <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(true) } >
                                         <GatchaCardRightButtonIcon className='pokesprite ball poke' />
                                         <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
@@ -89,12 +100,12 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         전설 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton>
-                                        <GatchaCardRightButtonIcon className='pokesprite ball master' />
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(false) }>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball ultra' />
                                         <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton>
-                                        <GatchaCardRightButtonIcon className='pokesprite ball master' />
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(true) }>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball ultra' />
                                         <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
                                 </GatchaCardRightWrapper>
@@ -111,11 +122,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         한정 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(false) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText> 뽑기 x 1</GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(true) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
@@ -131,11 +142,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         기간 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(false) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton>
+                                    <GatchaCardRightButton onClick={ () => gatchaModalController(true) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
