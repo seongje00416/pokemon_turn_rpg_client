@@ -3,15 +3,21 @@ import {
     BottomContainer,
     ButtonContainer,
     ContextContainer,
-    GatchaCard, GatchaCardLeftImage,
+    GatchaCard,
+    GatchaCardLeftImage,
     GatchaCardLeftWrapper,
     GatchaCardRightButton,
-    GatchaCardRightButtonIcon, GatchaCardRightButtonText,
+    GatchaCardRightButtonIcon,
+    GatchaCardRightButtonText,
     GatchaCardRightTitle,
     GatchaCardRightWrapper,
     GatchaCardWrapper,
     GatchaListContainer,
     GatchaListSideWrapper,
+    GatchaModalBackground, GatchaModalButton,
+    GatchaModalButtonContainer,
+    GatchaModalContainer, GatchaModalItemCard,
+    GatchaModalItemContainer, GatchaModalItemSingleCard, GatchaModalItemSingleContainer,
     MainContainer,
     MiddleContainer,
     TopContainer
@@ -29,6 +35,29 @@ export const PokemonGatchaPage = () => {
 
             </TopContainer>
             <MiddleContainer>
+                { /* 뽑기시 나오는 Modal 창 */ }
+                <GatchaModalBackground isVisible={true}>
+                    <GatchaModalContainer>
+                        <GatchaModalItemContainer isVisible={false} >
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                        </GatchaModalItemContainer>
+                        <GatchaModalItemSingleContainer isVisible={true}>
+                            <GatchaModalItemSingleCard> kkk </GatchaModalItemSingleCard>
+                        </GatchaModalItemSingleContainer>
+                        <GatchaModalButtonContainer>
+                            <GatchaModalButton> 확인 </GatchaModalButton>
+                        </GatchaModalButtonContainer>
+                    </GatchaModalContainer>
+                </GatchaModalBackground>
                 <GatchaListContainer>
                     <GatchaListSideWrapper>
                         <GatchaCard>
@@ -42,7 +71,11 @@ export const PokemonGatchaPage = () => {
                                     </GatchaCardRightTitle>
                                     <GatchaCardRightButton>
                                         <GatchaCardRightButtonIcon className='pokesprite ball poke' />
-                                        <GatchaCardRightButtonText> 뽑기 </GatchaCardRightButtonText>
+                                        <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
+                                    </GatchaCardRightButton>
+                                    <GatchaCardRightButton>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball poke' />
+                                        <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
                                 </GatchaCardRightWrapper>
                             </GatchaCardWrapper>
@@ -58,7 +91,11 @@ export const PokemonGatchaPage = () => {
                                     </GatchaCardRightTitle>
                                     <GatchaCardRightButton>
                                         <GatchaCardRightButtonIcon className='pokesprite ball master' />
-                                        <GatchaCardRightButtonText> 뽑기 </GatchaCardRightButtonText>
+                                        <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
+                                    </GatchaCardRightButton>
+                                    <GatchaCardRightButton>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball master' />
+                                        <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
                                 </GatchaCardRightWrapper>
                             </GatchaCardWrapper>
@@ -76,7 +113,11 @@ export const PokemonGatchaPage = () => {
                                     </GatchaCardRightTitle>
                                     <GatchaCardRightButton>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
-                                        <GatchaCardRightButtonText> 뽑기 </GatchaCardRightButtonText>
+                                        <GatchaCardRightButtonText> 뽑기 x 1</GatchaCardRightButtonText>
+                                    </GatchaCardRightButton>
+                                    <GatchaCardRightButton>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball great' />
+                                        <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
                                 </GatchaCardRightWrapper>
                             </GatchaCardWrapper>
@@ -92,7 +133,11 @@ export const PokemonGatchaPage = () => {
                                     </GatchaCardRightTitle>
                                     <GatchaCardRightButton>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
-                                        <GatchaCardRightButtonText> 뽑기 </GatchaCardRightButtonText>
+                                        <GatchaCardRightButtonText> 뽑기 x 1 </GatchaCardRightButtonText>
+                                    </GatchaCardRightButton>
+                                    <GatchaCardRightButton>
+                                        <GatchaCardRightButtonIcon className='pokesprite ball great' />
+                                        <GatchaCardRightButtonText> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
                                 </GatchaCardRightWrapper>
                             </GatchaCardWrapper>

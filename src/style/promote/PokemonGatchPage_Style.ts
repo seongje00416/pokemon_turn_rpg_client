@@ -105,10 +105,11 @@ export const GatchaCardRightWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 3%;
 `
 export const GatchaCardRightTitle = styled.p`
     width: 100%;
-    height: 40%;
+    height: 30%;
     font-weight: bold;
     font-size: 1.5rem;
     margin: 0;
@@ -118,7 +119,7 @@ export const GatchaCardRightTitle = styled.p`
 `
 export const GatchaCardRightButton = styled.div`
     width: 80%;
-    height: 30%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,6 +142,89 @@ export const GatchaCardRightButtonText = styled.span`
     font-size: 1.2rem;
     margin-inline: 5%;
 `
+// 가챠 화면 모달
+export const GatchaModalBackground = styled.div<GatchaModalBackgroundProps>`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: ${ props => props.isVisible ? "flex" : "none" };
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+`
+interface GatchaModalBackgroundProps {
+    isVisible: boolean;
+}
+export const GatchaModalContainer = styled.div`
+    width: 80%;
+    height: 70%;
+    border: 1px solid white;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+export const GatchaModalItemContainer = styled.div<GatchaModalItemContainerProps>`
+    width: 90%;
+    height: 80%;
+    display: ${ props => props.isVisible ? "grid" : "none" };
+    grid-template-columns: repeat(5, 1fr);  
+    grid-template-rows: repeat(2, 1fr);     
+    gap: 3%;                              
+    justify-content: center;
+    align-items: center;
+`
+export const GatchaModalItemSingleContainer = styled.div<GatchaModalItemContainerProps>`
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    display: ${ props => props.isVisible ? "flex" : "none" };
+`
+interface GatchaModalItemContainerProps {
+    isVisible: boolean;
+}
+export const GatchaModalButtonContainer = styled.div`
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const GatchaModalItemCard = styled.div`
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+`
+export const GatchaModalItemSingleCard = styled.div`
+    width: 30%;
+    height: 60%;
+    border: 1px solid gray;
+`
+export const GatchaModalButton = styled.div`
+    width: 10%;
+    height: 50%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 3%;
+    font-weight: bold;
+    
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+`
+
 // 하단 버튼 및 컨텍스트 컨테이너
 export const BottomContainer = styled.div`
     width: 100%;
