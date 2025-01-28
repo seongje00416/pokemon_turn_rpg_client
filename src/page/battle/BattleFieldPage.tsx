@@ -27,9 +27,37 @@ import {
     TeamPokemonInfoHP, TeamPokemonInfoHPText, PokemonInfoCardName
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
+import '@/service/battle/BattleService'
 
+import {
+    PokemonDetail,
+    Pokemon1,
+    Pokemon2,
+    Pokemon3,
+    Pokemon4,
+    Opposite1,
+    Opposite2,
+    Opposite3,
+    Opposite4,
+} from "@/service/data/PokemonBattleData.ts";
+import { useState } from 'react'
 
 export const BattleFieldPage = ( ) => {
+
+    // 플레이어측 포켓몬
+    const [ pokemon1, setPokemon1 ] = useState<PokemonDetail>( Pokemon1 );
+    const [ pokemon2, setPokemon2 ] = useState<PokemonDetail>( Pokemon2 );
+    const [ pokemon3, setPokemon3 ] = useState<PokemonDetail>( Pokemon3 );
+    const [ pokemon4, setPokemon4 ] = useState<PokemonDetail>( Pokemon4 );
+    // 상대측 포켓몬
+    const [ opposite1, setOpposite1 ] = useState<PokemonDetail>( Opposite1 );
+    const [ opposite2, setOpposite2 ] = useState<PokemonDetail>( Opposite2 );
+    const [ opposite3, setOpposite3 ] = useState<PokemonDetail>( Opposite3 );
+    const [ opposite4, setOpposite4 ] = useState<PokemonDetail>( Opposite4 );
+
+    const calculateRestHP = ( pokemon: PokemonDetail ) => { return pokemon.currentHP / pokemon.maxHP * 100; }
+    const displayPokemonHPText = ( pokemon: PokemonDetail ) => { return pokemon.currentHP + "/" + pokemon.maxHP; }
+
     return (
         <MainContainer>
             { /* 최상단 등급 컨테이너 */ }
@@ -43,14 +71,14 @@ export const BattleFieldPage = ( ) => {
             { /* 행동 게이지 컨테이너 */ }
             <MoveGageContainer>
                 <MoveGageLine>
-                    <MoveGageCard className="pokesprite pokemon infernape" moveGage={0} isOpposite={true} />
-                    <MoveGageCard className="pokesprite pokemon mudkip" moveGage={15} isOpposite={false} />
-                    <MoveGageCard className="pokesprite pokemon pikachu" moveGage={20} isOpposite={false} />
-                    <MoveGageCard className="pokesprite pokemon dialga" moveGage={29} isOpposite={false} />
-                    <MoveGageCard className="pokesprite pokemon mew" moveGage={40} isOpposite={true} />
-                    <MoveGageCard className="pokesprite pokemon piplup" moveGage={50} isOpposite={false} />
-                    <MoveGageCard className="pokesprite pokemon palkia" moveGage={66} isOpposite={true} />
-                    <MoveGageCard className="pokesprite pokemon arceus" moveGage={90} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${pokemon1.englishName}` } moveGage={pokemon1.moveGage} isOpposite={true} />
+                    <MoveGageCard className={ `pokesprite pokemon ${pokemon2.englishName}` } moveGage={pokemon2.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${pokemon3.englishName}` } moveGage={pokemon3.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${pokemon4.englishName}` } moveGage={pokemon4.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite1.englishName}` } moveGage={opposite1.moveGage} isOpposite={true} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite2.englishName}` } moveGage={opposite2.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite3.englishName}` } moveGage={opposite3.moveGage} isOpposite={true} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite4.englishName}` } moveGage={opposite4.moveGage} isOpposite={false} />
                 </MoveGageLine>
             </MoveGageContainer>
             { /* 중단 참여 포켓몬 컨테이너 */ }
@@ -62,13 +90,13 @@ export const BattleFieldPage = ( ) => {
                             <TeamPokemonInfoStatusWrapper>
 
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 초염몽 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> {pokemon1.name} </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={40} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP( pokemon1 ) } />
+                                <TeamPokemonInfoHPText> { displayPokemonHPText( pokemon1 ) } </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/초염몽_앞.gif' />
+                        <TeamPokemonImage src={ 'src/assets/pokemon/' + pokemon1.name + '_앞.gif' } />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
@@ -79,13 +107,13 @@ export const BattleFieldPage = ( ) => {
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 엠페르트 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { pokemon2.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={12} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP( pokemon2 ) } />
+                                <TeamPokemonInfoHPText> { displayPokemonHPText( pokemon2 ) } </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/엠페르트_앞.gif' />
+                        <TeamPokemonImage src={ 'src/assets/pokemon/' + pokemon2.name + '_앞.gif' } />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
@@ -94,26 +122,26 @@ export const BattleFieldPage = ( ) => {
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 화상 [1] </TeamPokemonInfoStatusLabel>
                                 <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={false}> 물리공격 [2] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 메가니움 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { pokemon3.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={95} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP(pokemon3) } />
+                                <TeamPokemonInfoHPText> { displayPokemonHPText(pokemon3) } </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/메가니움_앞.gif' />
+                        <TeamPokemonImage src={'src/assets/pokemon/' + pokemon3.name + '_앞.gif'} />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
 
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 푸크린 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { pokemon4.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={50} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP(pokemon4)} />
+                                <TeamPokemonInfoHPText> { displayPokemonHPText(pokemon4)} </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/푸크린_앞.gif' />
+                        <TeamPokemonImage src={'src/assets/pokemon/' + pokemon4.name + '_앞.gif'} />
                     </TeamPokemonCard>
                 </LeftTeamContainer>
                 { /* 적군 포켓몬 목록 */}
@@ -123,13 +151,13 @@ export const BattleFieldPage = ( ) => {
                             <TeamPokemonInfoStatusWrapper>
 
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 괴력몬 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { opposite1.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={40} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP(opposite1)} />
+                                <TeamPokemonInfoHPText> { displayPokemonHPText(opposite1)} </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/괴력몬_앞.gif' />
+                        <TeamPokemonImage src={ 'src/assets/pokemon/' + opposite1.name + '_앞.gif'} />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
@@ -140,13 +168,13 @@ export const BattleFieldPage = ( ) => {
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={false}> 화상 [1] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 라이츄 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { opposite2.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={12} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP(opposite2)} />
+                                <TeamPokemonInfoHPText>  { displayPokemonHPText(opposite2)} </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/라이츄_앞.gif' />
+                        <TeamPokemonImage src={'src/assets/pokemon/' + opposite2.name + '_앞.gif'} />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
@@ -155,26 +183,26 @@ export const BattleFieldPage = ( ) => {
                                 <TeamPokemonInfoStatusLabel isPositive={false} isDeleteable={true}> 화상 [1] </TeamPokemonInfoStatusLabel>
                                 <TeamPokemonInfoStatusLabel isPositive={true} isDeleteable={false}> 물리공격 [2] </TeamPokemonInfoStatusLabel>
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 팬텀 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> {opposite3.name} </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={95} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={calculateRestHP(opposite3)} />
+                                <TeamPokemonInfoHPText> {displayPokemonHPText(opposite3)} </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/팬텀_앞.gif' />
+                        <TeamPokemonImage src={ 'src/assets/pokemon/' + opposite3.name + '_앞.gif'} />
                     </TeamPokemonCard>
                     <TeamPokemonCard>
                         <TeamPokemonInfoWrapper>
                             <TeamPokemonInfoStatusWrapper>
 
                             </TeamPokemonInfoStatusWrapper>
-                            <TeamPokemonInfoName> 후딘 </TeamPokemonInfoName>
+                            <TeamPokemonInfoName> { opposite4.name } </TeamPokemonInfoName>
                             <TeamPokemonInfoHP>
-                                <TeamPokemonInfoHPGage restHP={50} />
-                                <TeamPokemonInfoHPText> 150/150 </TeamPokemonInfoHPText>
+                                <TeamPokemonInfoHPGage restHP={ calculateRestHP(opposite4)} />
+                                <TeamPokemonInfoHPText> {displayPokemonHPText(opposite4)} </TeamPokemonInfoHPText>
                             </TeamPokemonInfoHP>
                         </TeamPokemonInfoWrapper>
-                        <TeamPokemonImage src='src/assets/pokemon/후딘_앞.gif' />
+                        <TeamPokemonImage src={ 'src/assets/pokemon/' + opposite4.name + '_앞.gif' } />
                     </TeamPokemonCard>
                 </RightTeamContainer>
             </MiddleContainer>

@@ -84,6 +84,7 @@ export const TeamPokemonCard = styled.div`
     margin: 2%;
     border: 1px solid gray;
     border-radius: 10px;
+    justify-content: center;
 `
 export const TeamPokemonInfoWrapper = styled.div`
     display: flex;
@@ -149,7 +150,12 @@ export const TeamPokemonInfoHPText = styled.p`
     color: dimgray;
 `
 export const TeamPokemonImage = styled.img`
-    margin: 2%;
+    margin-top: 4%;
+    max-width: 40%;
+    height: auto;
+    max-height: 80%;
+    aspect-ratio: 1;
+    object-fit: contain;
 `
 
 // 하단 스킬 정보 및 선택 컨테이너
