@@ -14,9 +14,9 @@ export interface PokemonDetail {
     avoidance: number;          // 회피율
     currentHP: number;          // 현재 HP
     moveGage: number;           // 행동 게이지
-    state: PokemonState[];      // 적용되어 있는 상태 이상
+    status: PokemonStatus[];      // 적용되어 있는 상태 이상
 }
-interface PokemonState {
+interface PokemonStatus {
     name: string;               // 상태이상 이름
     turn: number;               // 지속 턴수
     isPositive: boolean;        // 이로운 효과 여부
@@ -38,7 +38,7 @@ export const Pokemon1:PokemonDetail = {
     avoidance: 20,
     currentHP: 60,
     moveGage: 20,
-    state: []
+    status: []
 } as const;
 export const Pokemon2:PokemonDetail = {
     name: "물짱이",
@@ -54,7 +54,7 @@ export const Pokemon2:PokemonDetail = {
     avoidance: 10,
     currentHP: 130,
     moveGage: 26,
-    state: []
+    status: []
 } as const;
 export const Pokemon3:PokemonDetail = {
     name: "피카츄",
@@ -70,7 +70,7 @@ export const Pokemon3:PokemonDetail = {
     avoidance: 10,
     currentHP: 100,
     moveGage: 40,
-    state: []
+    status: []
 } as const;
 export const Pokemon4:PokemonDetail = {
     name: "디아루가",
@@ -86,7 +86,7 @@ export const Pokemon4:PokemonDetail = {
     avoidance: 20,
     currentHP: 180,
     moveGage: 5,
-    state: []
+    status: []
 } as const;
 export const Opposite1:PokemonDetail = {
     name: "뮤",
@@ -102,7 +102,7 @@ export const Opposite1:PokemonDetail = {
     avoidance: 20,
     currentHP: 110,
     moveGage: 75,
-    state: []
+    status: []
 } as const;
 export const Opposite2:PokemonDetail = {
     name: "팽도리",
@@ -118,7 +118,7 @@ export const Opposite2:PokemonDetail = {
     avoidance: 10,
     currentHP: 90,
     moveGage: 65,
-    state: []
+    status: []
 } as const;
 export const Opposite3:PokemonDetail = {
     name: "펄기아",
@@ -134,7 +134,7 @@ export const Opposite3:PokemonDetail = {
     avoidance: 30,
     currentHP: 110,
     moveGage: 32,
-    state: []
+    status: []
 } as const;
 export const Opposite4:PokemonDetail = {
     name: "아르세우스",
@@ -150,5 +150,5 @@ export const Opposite4:PokemonDetail = {
     avoidance: 70,
     currentHP: 150,
     moveGage: 42,
-    state: []
+    status: []
 } as const;

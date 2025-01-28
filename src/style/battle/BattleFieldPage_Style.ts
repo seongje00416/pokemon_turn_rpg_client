@@ -175,20 +175,37 @@ export const PokemonInfoWrapper = styled.div`
 `
 export const PokemonInfoCard = styled.div`
     width: 90%;
-    height: 100%;
+    height: 90%;
     margin: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: visible;
 `
 export const PokemonInfoCardName = styled.p`
-    width: 40%;
-    text-align: center;
+    width: 70%;
+    text-align: left;
     font-weight: bold;
     font-size: 24px;
     margin: 0;
+    z-index: 2;
 `
-
+export const PokemonInfoCardImageWrapper = styled.div`
+    position: absolute;  
+    bottom: 5%;           
+    left: 60%;              
+    width: 60%;           
+    height: 110%;
+    display: flex;
+    align-items: flex-end;
+`
+export const PokemonInfoCardBackSprite = styled.img`
+    width: 50%;
+    height: auto;
+    z-index: 1;
+    border-radius: 5px;
+`
 
 //      포켓몬 스킬 목록
 export const SkillWrapper = styled.div`

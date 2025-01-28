@@ -24,7 +24,9 @@ import {
     TeamPokemonInfoStatusLabel,
     TeamPokemonInfoName,
     TeamPokemonInfoHPGage,
-    TeamPokemonInfoHP, TeamPokemonInfoHPText, PokemonInfoCardName
+    TeamPokemonInfoHP,
+    TeamPokemonInfoHPText,
+    PokemonInfoCardName,
 } from '@/style/battle/BattleFieldPage_Style'
 import '@/style/sprite/pokesprite-pokemon-gen8.css'
 import '@/service/battle/BattleService'
@@ -40,9 +42,25 @@ import {
     Opposite3,
     Opposite4,
 } from "@/service/data/PokemonBattleData.ts";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const BattleFieldPage = ( ) => {
+
+    // 배경 음악 설정
+    const [ battleBGM ] = useState( new Audio('src/assets/bgm/battle_bgm.mp3') );
+
+    useEffect(() => {
+        battleBGM.volume = 0.1;
+        battleBGM.loop = true; // 반복 재생 설정
+        battleBGM.play().catch(error => {
+            console.log("Audio playback failed:", error);
+        });
+
+        return () => {
+            battleBGM.pause();
+            battleBGM.currentTime = 0;
+        };
+    }, []);
 
     // 플레이어측 포켓몬
     const [ pokemon1, setPokemon1 ] = useState<PokemonDetail>( Pokemon1 );
@@ -55,6 +73,7 @@ export const BattleFieldPage = ( ) => {
     const [ opposite3, setOpposite3 ] = useState<PokemonDetail>( Opposite3 );
     const [ opposite4, setOpposite4 ] = useState<PokemonDetail>( Opposite4 );
 
+    // 화면 표시 제어 함수
     const calculateRestHP = ( pokemon: PokemonDetail ) => { return pokemon.currentHP / pokemon.maxHP * 100; }
     const displayPokemonHPText = ( pokemon: PokemonDetail ) => { return pokemon.currentHP + "/" + pokemon.maxHP; }
 
@@ -71,14 +90,14 @@ export const BattleFieldPage = ( ) => {
             { /* 행동 게이지 컨테이너 */ }
             <MoveGageContainer>
                 <MoveGageLine>
-                    <MoveGageCard className={ `pokesprite pokemon ${pokemon1.englishName}` } moveGage={pokemon1.moveGage} isOpposite={true} />
+                    <MoveGageCard className={ `pokesprite pokemon ${pokemon1.englishName}` } moveGage={pokemon1.moveGage} isOpposite={false} />
                     <MoveGageCard className={ `pokesprite pokemon ${pokemon2.englishName}` } moveGage={pokemon2.moveGage} isOpposite={false} />
                     <MoveGageCard className={ `pokesprite pokemon ${pokemon3.englishName}` } moveGage={pokemon3.moveGage} isOpposite={false} />
                     <MoveGageCard className={ `pokesprite pokemon ${pokemon4.englishName}` } moveGage={pokemon4.moveGage} isOpposite={false} />
                     <MoveGageCard className={ `pokesprite pokemon ${opposite1.englishName}` } moveGage={opposite1.moveGage} isOpposite={true} />
-                    <MoveGageCard className={ `pokesprite pokemon ${opposite2.englishName}` } moveGage={opposite2.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite2.englishName}` } moveGage={opposite2.moveGage} isOpposite={true} />
                     <MoveGageCard className={ `pokesprite pokemon ${opposite3.englishName}` } moveGage={opposite3.moveGage} isOpposite={true} />
-                    <MoveGageCard className={ `pokesprite pokemon ${opposite4.englishName}` } moveGage={opposite4.moveGage} isOpposite={false} />
+                    <MoveGageCard className={ `pokesprite pokemon ${opposite4.englishName}` } moveGage={opposite4.moveGage} isOpposite={true} />
                 </MoveGageLine>
             </MoveGageContainer>
             { /* 중단 참여 포켓몬 컨테이너 */ }
