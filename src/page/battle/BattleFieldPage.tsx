@@ -43,6 +43,7 @@ import {
     Opposite4,
 } from "@/service/data/PokemonBattleData.ts";
 import { useState, useEffect } from 'react'
+import {TurnController} from "@/service/battle/BattleService.tsx";
 
 export const BattleFieldPage = ( ) => {
 
@@ -76,6 +77,22 @@ export const BattleFieldPage = ( ) => {
     // 화면 표시 제어 함수
     const calculateRestHP = ( pokemon: PokemonDetail ) => { return pokemon.currentHP / pokemon.maxHP * 100; }
     const displayPokemonHPText = ( pokemon: PokemonDetail ) => { return pokemon.currentHP + "/" + pokemon.maxHP; }
+
+    // 배틀 제어 함수
+    const battleController = () => {
+        // 행동 게이지를 통해 현재 턴을 잡은 포켓몬 확인
+        const current:PokemonDetail = checkMoveGage();
+        // 현재 턴을 잡은 포켓몬의 턴 진행
+        TurnController( current );
+        // 배틀 종료 여부 확인
+        
+        // 행동 게이지 조절
+        
+    }
+    // 행동 게이지가 가장 낮은 포켓몬 확인
+    const checkMoveGage = () => {
+        return pokemon1;
+    }
 
     return (
         <MainContainer>

@@ -1,6 +1,8 @@
 import '@/service/battle/skill/SkillService'
 import '@/service/battle/status/StatusService'
 
+import { PokemonDetail } from "@/service/data/PokemonBattleData.ts";
+
 // ---------- 배틀 흐름 함수 ---------- //
 // 배틀 시작시 실행되는 함수
 export const BattleStart = () => {
@@ -15,7 +17,7 @@ export const BattleInformationDisplayController = () => {
 
 }
 // 1턴의 흐름을 제어하는 함수
-export const TurnController = () => {
+export const TurnController = ( current: PokemonDetail ) => {
     // 턴 시작시 장비 효과 발동
 
     // 턴 시작시 상태 이상 효과 발동
