@@ -223,6 +223,13 @@ export const GatchaModalItemCard = styled.div`
     width: 100%;
     height: 100%;
     border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const GatchaModalItemCardImage = styled.img`
+    width: auto;
+    height: 100%;
 `
 export const GatchaModalItemSingleCard = styled.div`
     width: 30%;

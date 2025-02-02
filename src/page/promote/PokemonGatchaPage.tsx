@@ -16,15 +16,22 @@ import {
     GatchaListSideWrapper,
     GatchaModalBackground, GatchaModalButton,
     GatchaModalButtonContainer,
-    GatchaModalContainer, GatchaModalItemCard,
+    GatchaModalContainer, GatchaModalItemCard, GatchaModalItemCardImage,
     GatchaModalItemContainer, GatchaModalItemSingleCard, GatchaModalItemSingleContainer,
     MainContainer,
     MiddleContainer, MoneyCard, MoneyCardIcon,
     TopContainer
 } from '@/style/promote/PokemonGatchPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
+
+import '@/service/gatcha/GatchaService'
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
+import {
+    CommonGatchaController,
+    LegendaryGatchaController,
+    LimitedGatchaController, PickupGatchaController
+} from "@/service/gatcha/GatchaService.ts";
 
 export const PokemonGatchaPage = () => {
 
@@ -35,6 +42,8 @@ export const PokemonGatchaPage = () => {
     const [ isSingleGatcha, setSingleGatcha ] = useState(false);
     const [ isMultiGatcha, setMultiGatcha ] = useState(false);
 
+    const [ getPokemonList, setGetPokemonList ] = useState<string[]>( [] );
+
     const gatchaModalController = ( isMulti: boolean ) => {
         setSingleGatcha( !isMulti );
         setMultiGatcha( isMulti );
@@ -42,13 +51,36 @@ export const PokemonGatchaPage = () => {
     }
 
     // 사용자 보유 재화 상태값
-    const [ poke, setPoke ] = useState(0);
+    const [ poke, setPoke ] = useState(50);
     const [ great, setGreat ] = useState(1);
     const [ ultra, setUltra ] = useState(100);
 
-    const gatchaController = ( type:string, amount:number ) => {
+    const gatchaController = ( type:string, amount:number, kind:string ) => {
         if ( !gatchaApplyChecker( type, amount ) ) return false;
         ballCountController( type, amount );
+
+        const getPokemonList:string[] = [];
+
+        for( let i = 0; i < amount; i++ ){
+            switch( kind ) {
+                case "common" :
+                    getPokemonList.push( CommonGatchaController() );
+                    break;
+                case "legendary" :
+                    getPokemonList.push( LegendaryGatchaController() );
+                    break;
+                case "limited" :
+                    getPokemonList.push( LimitedGatchaController() );
+                    break;
+                case "pickup" :
+                    getPokemonList.push( PickupGatchaController() );
+                    break;
+                default:
+                    return;
+            }
+        }
+        setGetPokemonList( getPokemonList );
+
         if( amount === 10 ) gatchaModalController( true );
         else gatchaModalController( false );
     }
@@ -100,16 +132,11 @@ export const PokemonGatchaPage = () => {
                 <GatchaModalBackground isVisible={ isModalOpen }>
                     <GatchaModalContainer>
                         <GatchaModalItemContainer isVisible={ isMultiGatcha } >
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
-                            <GatchaModalItemCard> ddd </GatchaModalItemCard>
+                            {getPokemonList.map((pokemon, index) => (
+                                <GatchaModalItemCard key={index}>
+                                    <GatchaModalItemCardImage src={`src/assets/pokemon/` + pokemon + '_앞.gif'} />
+                                </GatchaModalItemCard>
+                            ))}
                         </GatchaModalItemContainer>
                         <GatchaModalItemSingleContainer isVisible={ isSingleGatcha }>
                             <GatchaModalItemSingleCard> kkk </GatchaModalItemSingleCard>
@@ -130,11 +157,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         상시 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "poke", 1 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "poke", 1, "common" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball poke' />
                                         <GatchaCardRightButtonText isEnough={ poke > 0 }> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "poke", 10 ) } >
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "poke", 10, "common" ) } >
                                         <GatchaCardRightButtonIcon className='pokesprite ball poke' />
                                         <GatchaCardRightButtonText isEnough={ poke >= 10 }> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
@@ -150,11 +177,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         전설 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "ultra", 1 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "ultra", 1, "legendary" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball ultra' />
                                         <GatchaCardRightButtonText isEnough={ ultra >= 1 }> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "ultra", 10 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "ultra", 10, "legendary" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball ultra' />
                                         <GatchaCardRightButtonText isEnough={ ultra >= 10 }> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
@@ -172,11 +199,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         한정 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 1 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 1, "limited" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText isEnough={ great >= 1 }> 뽑기 x 1</GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 10 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 10, "limited" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText isEnough={ great >= 10 }> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
@@ -192,11 +219,11 @@ export const PokemonGatchaPage = () => {
                                     <GatchaCardRightTitle>
                                         기간 포획
                                     </GatchaCardRightTitle>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 1 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 1, "pickup" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText isEnough={ great >= 1 }> 뽑기 x 1 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
-                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 10 ) }>
+                                    <GatchaCardRightButton onClick={ () => gatchaController( "great", 10, "pickup" ) }>
                                         <GatchaCardRightButtonIcon className='pokesprite ball great' />
                                         <GatchaCardRightButtonText isEnough={ great >= 10 }> 뽑기 x 10 </GatchaCardRightButtonText>
                                     </GatchaCardRightButton>
