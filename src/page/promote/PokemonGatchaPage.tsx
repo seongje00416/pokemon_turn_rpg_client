@@ -139,7 +139,9 @@ export const PokemonGatchaPage = () => {
                             ))}
                         </GatchaModalItemContainer>
                         <GatchaModalItemSingleContainer isVisible={ isSingleGatcha }>
-                            <GatchaModalItemSingleCard> kkk </GatchaModalItemSingleCard>
+                            <GatchaModalItemSingleCard>
+                                <GatchaModalItemCardImage src={`src/assets/pokemon/` + getPokemonList[0] + '_앞.gif'} />
+                            </GatchaModalItemSingleCard>
                         </GatchaModalItemSingleContainer>
                         <GatchaModalButtonContainer>
                             <GatchaModalButton onClick={ () => setIsModalOpen(false) }> 확인 </GatchaModalButton>

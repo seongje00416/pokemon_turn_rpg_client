@@ -235,6 +235,9 @@ export const GatchaModalItemSingleCard = styled.div`
     width: 30%;
     height: 60%;
     border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 export const GatchaModalButton = styled.div`
     width: 10%;
