@@ -10,7 +10,24 @@ export const MainContainer = styled.div`
 export const TopContainer = styled.div`
     width: 100%;
     height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
     border-bottom: 2px solid gray;
+`
+export const MoneyCard = styled.div`
+    width: 10%;
+    height: 60%;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1%;
+    font-weight: bold;
+`
+export const MoneyCardIcon = styled.span`
+    
 `
 // 중단 가챠 목록 컨테이너
 export const MiddleContainer = styled.div`
@@ -137,11 +154,15 @@ export const GatchaCardRightButton = styled.div`
 export const GatchaCardRightButtonIcon = styled.span`
     
 `
-export const GatchaCardRightButtonText = styled.span`
+export const GatchaCardRightButtonText = styled.span<GatchaCardRightButtonTextProps>`
+    font-size: 1.1rem;
     font-weight: bold;
-    font-size: 1.2rem;
     margin-inline: 5%;
+    color: ${ props => props.isEnough ? "black" : "darkred" }
 `
+interface GatchaCardRightButtonTextProps {
+    isEnough: boolean
+}
 // 가챠 화면 모달
 export const GatchaModalBackground = styled.div<GatchaModalBackgroundProps>`
     position: fixed;
