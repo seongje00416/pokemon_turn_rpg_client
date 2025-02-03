@@ -50,7 +50,12 @@ import {
     LeftContainerEquipmentRightItemName,
     LeftContainerEquipmentRightItemImage,
     LeftContainerEquipmentRightSpecialItemInformationWrapper,
-    RightPokemonNameWrapper, RightPokemonImage, RightPokemonImageIcon, RightPokemonName, BackButton,
+    RightPokemonNameWrapper,
+    RightPokemonImage,
+    RightPokemonImageIcon,
+    RightPokemonName,
+    BackButton,
+    LeftContainerInformationTranscendenceStarIcon,
 } from '@/style/promote/MyPokemonPage_Style'
 import '@/style/sprite/pokesprite-inventory.css'
 
@@ -136,13 +141,25 @@ export const MyPokemonPage = () => {
                                     <LeftContainerInformationDetailValue> 60 </LeftContainerInformationDetailValue>
                                 </LeftContainerInformationDetailWrapper>
                                 <LeftContainerInformationDetailWrapper>
+                                    <LeftContainerInformationDetailName> 초월 </LeftContainerInformationDetailName>
+                                    <LeftContainerInformationDetailValue>
+                                        <LeftContainerInformationTranscendenceStarIcon src="src/assets/icon/transcendence_star.png" />
+                                        <LeftContainerInformationTranscendenceStarIcon src="src/assets/icon/transcendence_star.png" />
+                                        <LeftContainerInformationTranscendenceStarIcon src="src/assets/icon/transcendence_star.png" />
+                                    </LeftContainerInformationDetailValue>
+                                </LeftContainerInformationDetailWrapper>
+                                <LeftContainerInformationDetailWrapper>
                                     <LeftContainerInformationDetailName> 타입 </LeftContainerInformationDetailName>
                                     <LeftContainerInformationDetailValue> 불꽃 </LeftContainerInformationDetailValue>
-                                </LeftContainerInformationDetailWrapper><LeftContainerInformationDetailWrapper>
-                                <LeftContainerInformationDetailName> 포지션 </LeftContainerInformationDetailName>
-                                <LeftContainerInformationDetailValue> 스위퍼 </LeftContainerInformationDetailValue>
-                            </LeftContainerInformationDetailWrapper>
-
+                                </LeftContainerInformationDetailWrapper>
+                                <LeftContainerInformationDetailWrapper>
+                                    <LeftContainerInformationDetailName> 포지션 </LeftContainerInformationDetailName>
+                                    <LeftContainerInformationDetailValue> 스위퍼 </LeftContainerInformationDetailValue>
+                                </LeftContainerInformationDetailWrapper>
+                                <LeftContainerInformationDetailWrapper>
+                                    <LeftContainerInformationDetailName> 보유중인 알 개수 </LeftContainerInformationDetailName>
+                                    <LeftContainerInformationDetailValue> 0 </LeftContainerInformationDetailValue>
+                                </LeftContainerInformationDetailWrapper>
                             </LeftContainerInformationDetailContainer>
                         </LeftContentInformationContainer>
                         { /* 장비 화면 */ }
@@ -255,6 +272,7 @@ export const MyPokemonPage = () => {
             </ContentContainer>
             <ButtonContainer>
                 <BackButton onClick={ () => navigate( '/myPokemonList' )}> 뒤로 </BackButton>
+                <BackButton> 초월 </BackButton>
             </ButtonContainer>
         </MainContainer>
     )

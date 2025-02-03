@@ -148,6 +148,10 @@ export const LeftContainerInformationDetailValue = styled.div`
     align-items: center;
     border-bottom: 1px solid lightgray;
 `
+export const LeftContainerInformationTranscendenceStarIcon = styled.img`
+    height: 50%;
+    width: auto;
+`
 //      장비 컨테이너
 export const LeftContentEquipmentContainer = styled.div<CurrentProps>`
     width: 100%;
